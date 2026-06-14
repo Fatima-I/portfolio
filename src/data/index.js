@@ -16,7 +16,7 @@ export const personal = {
   email: "fatimaikram287@gmail.com",
   github: "https://github.com/Fatima-I",
   //linkedin: "",
-  resume: "/resume.pdf",
+  resume: "/CV.pdf",
 }
 
 export const projects = [

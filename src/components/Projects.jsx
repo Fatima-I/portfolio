@@ -61,17 +61,17 @@ function ProjectCard({ project, index }) {
         <div style={{ display: 'flex', gap: 8 }}>
           {project.github && (
             <a href={project.github} target="_blank" rel="noreferrer"
-              style={{ color: '#3D444D', transition: 'color 0.2s, transform 0.2s', display: 'flex', padding: 6, borderRadius: 6, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ color: '#6B7785', transition: 'color 0.2s, transform 0.2s', display: 'flex', padding: 6, borderRadius: 6, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
               onMouseEnter={e => { e.currentTarget.style.color = accent; e.currentTarget.style.borderColor = `${accent}40` }}
-              onMouseLeave={e => { e.currentTarget.style.color = '#3D444D'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)' }}>
+              onMouseLeave={e => { e.currentTarget.style.color = '#6B7785'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)' }}>
               <GithubIcon />
             </a>
           )}
           {project.live && (
             <a href={project.live} target="_blank" rel="noreferrer"
-              style={{ color: '#3D444D', transition: 'color 0.2s', display: 'flex', padding: 6, borderRadius: 6, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ color: '#6B7785', transition: 'color 0.2s', display: 'flex', padding: 6, borderRadius: 6, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
               onMouseEnter={e => { e.currentTarget.style.color = accent; e.currentTarget.style.borderColor = `${accent}40` }}
-              onMouseLeave={e => { e.currentTarget.style.color = '#3D444D'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)' }}>
+              onMouseLeave={e => { e.currentTarget.style.color = '#6B7785'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)' }}>
               <ExternalLink size={16} />
             </a>
           )}
@@ -80,7 +80,7 @@ function ProjectCard({ project, index }) {
       <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.05rem', fontWeight: 600, color: '#D0D8E0' }}>
         {project.title}
       </h3>
-      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', color: '#5A6370', lineHeight: 1.75, flex: 1 }}>
+      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', color: '#8892A0', lineHeight: 1.75, flex: 1 }}>
         {project.description}
       </p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>

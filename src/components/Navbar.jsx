@@ -45,15 +45,16 @@ export default function Navbar() {
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           {links.map((link, i) => (
             <a key={link} href={`#${link.toLowerCase()}`}
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#5A6370', textDecoration: 'none', transition: 'color 0.2s' }}
+              style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#8892A0', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={e => e.target.style.color = '#E6EDF3'}
-              onMouseLeave={e => e.target.style.color = '#5A6370'}>
+              onMouseLeave={e => e.target.style.color = '#8892A0'}>
               {link}
             </a>
           ))}
           <a href={personal.resume} target="_blank" rel="noreferrer"
             style={{
               fontFamily: "'JetBrains Mono', monospace", fontSize: 12,
+              fontWeight: 600,
               background: 'linear-gradient(135deg, #00FFB2, #7B6EF6)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
               textDecoration: 'none',
@@ -61,9 +62,9 @@ export default function Navbar() {
               padding: '6px 14px', borderRadius: 6,
               transition: 'border-color 0.2s, background 0.2s',
             }}
-            onMouseEnter={e => { e.target.style.borderColor = 'rgba(0,255,178,0.5)'; e.target.style.background = 'rgba(0,255,178,0.05)' }}
+            onMouseEnter={e => { e.target.style.borderColor = 'rgba(0,255,178,0.5)'; e.target.style.background = 'rgba(0,255,178,0.05)'; e.target.style.webkitTextFillColor = 'unset' }}
             onMouseLeave={e => { e.target.style.borderColor = 'rgba(123,110,246,0.3)'; e.target.style.background = 'transparent' }}>
-            resume.pdf
+            CV.pdf
           </a>
         </div>
       </div>

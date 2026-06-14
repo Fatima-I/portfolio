@@ -36,3 +36,12 @@ body {
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* Fix dim text globally */
+p, span, a, li, h1, h2, h3, h4 {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: #C0CAD4;
+}

@@ -54,7 +54,7 @@ export default function Skills() {
                       whileHover={{ color, borderColor: `${color}30`, background: `${color}08` }}
                       style={{
                         fontFamily: "'JetBrains Mono', monospace", fontSize: 11,
-                        color: '#4A5568', background: 'rgba(255,255,255,0.03)',
+                        color: '#7D8FA0', background: 'rgba(255,255,255,0.03)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         padding: '4px 10px', borderRadius: 6, cursor: 'default',
                         transition: 'all 0.2s',

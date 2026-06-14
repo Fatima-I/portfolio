@@ -34,7 +34,7 @@ export default function About() {
 
             <div>
               <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.3rem', fontWeight: 600, color: '#D0D8E0', marginBottom: 6 }}>{personal.name}</h3>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, color: '#5A6370' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, color: '#8892A0' }}>
                 <MapPin size={13} style={{ color: '#7B6EF6' }} />
                 <span style={{ fontFamily: "'Inter', sans-serif" }}>{personal.location}</span>
               </div>
@@ -51,7 +51,7 @@ export default function About() {
                   onMouseEnter={e => e.currentTarget.style.borderColor = `${color}30`}
                   onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'}>
                   <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.5rem', fontWeight: 700, color, marginBottom: 2 }}>{num}</p>
-                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, color: '#5A6370', lineHeight: 1.3 }}>{label}</p>
+                  <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, color: '#8892A0', lineHeight: 1.3 }}>{label}</p>
                 </div>
               ))}
             </div> */}
@@ -81,10 +81,10 @@ export default function About() {
                 Who I am
               </span>
             </h2>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: '#5A6370', lineHeight: 1.9, marginBottom: '1.25rem' }}>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: '#8892A0', lineHeight: 1.9, marginBottom: '1.25rem' }}>
               {personal.bio}
             </p>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: '#5A6370', lineHeight: 1.9, marginBottom: '2rem' }}>
+            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: '#8892A0', lineHeight: 1.9, marginBottom: '2rem' }}>
               I am open to internship and full-time roles across AI/ML, full stack web and mobile development, and automation.
             </p>
 
