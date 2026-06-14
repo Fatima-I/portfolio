@@ -70,7 +70,7 @@ export default function Hero() {
             color: '#A89AF6',
           }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#00FFB2', display: 'inline-block', animation: 'pulse 2s infinite' }} />
-            open to opportunities · Lahore, PK
+            open to opportunities
           </span>
         </motion.div>
 
