@@ -17,7 +17,9 @@ const tagColors = [
   { bg: 'rgba(0,200,255,0.06)', border: 'rgba(0,200,255,0.15)', color: '#00C8FF' },
 ]
 
-function ProjectCard({ project, index, featured }) {
+const INITIAL_COUNT = 8
+
+function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false)
   const accentColors = ['#00FFB2', '#7B6EF6', '#F471B5', '#00C8FF', '#FFB347', '#00FFB2']
   const accent = accentColors[index % accentColors.length]
@@ -42,14 +44,11 @@ function ProjectCard({ project, index, featured }) {
         transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
         overflow: 'hidden',
       }}>
-      {/* Top accent line */}
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, height: 1,
         background: hovered ? `linear-gradient(90deg, transparent, ${accent}, transparent)` : 'transparent',
         transition: 'background 0.3s',
       }} />
-
-      {/* Subtle corner glow */}
       <div style={{
         position: 'absolute', top: -40, right: -40, width: 120, height: 120,
         borderRadius: '50%',
@@ -57,7 +56,6 @@ function ProjectCard({ project, index, featured }) {
         transition: 'opacity 0.3s',
         opacity: hovered ? 1 : 0,
       }} />
-
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', position: 'relative' }}>
         <span style={{ fontSize: 32, filter: hovered ? 'none' : 'grayscale(20%)' }}>{project.emoji}</span>
         <div style={{ display: 'flex', gap: 8 }}>
@@ -79,7 +77,6 @@ function ProjectCard({ project, index, featured }) {
           )}
         </div>
       </div>
-
       <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.05rem', fontWeight: 600, color: '#D0D8E0' }}>
         {project.title}
       </h3>
@@ -102,9 +99,7 @@ function ProjectCard({ project, index, featured }) {
 
 export default function Projects() {
   const [showAll, setShowAll] = useState(false)
-  const featured = projects.filter(p => p.featured)
-  const rest = projects.filter(p => !p.featured)
-  const visible = showAll ? projects : featured
+  const visible = showAll ? projects : projects.slice(0, INITIAL_COUNT)
 
   return (
     <section id="projects" style={{ padding: '7rem 0' }}>
@@ -124,11 +119,11 @@ export default function Projects() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))', gap: '1.25rem' }}>
           {visible.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} featured={project.featured} />
+            <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
 
-        {!showAll && rest.length > 0 && (
+        {!showAll && projects.length > INITIAL_COUNT && (
           <FadeIn delay={0.2}>
             <div style={{ textAlign: 'center', marginTop: '3rem' }}>
               <button onClick={() => setShowAll(true)} style={{
@@ -140,7 +135,7 @@ export default function Projects() {
               }}
                 onMouseEnter={e => { e.target.style.borderColor = 'rgba(123,110,246,0.4)'; e.target.style.color = '#A89AF6'; e.target.style.background = 'rgba(123,110,246,0.06)' }}
                 onMouseLeave={e => { e.target.style.borderColor = 'rgba(255,255,255,0.08)'; e.target.style.color = '#8892A0'; e.target.style.background = 'rgba(255,255,255,0.03)' }}>
-                show {rest.length} more ↓
+                show {projects.length - INITIAL_COUNT} more ↓
               </button>
             </div>
           </FadeIn>

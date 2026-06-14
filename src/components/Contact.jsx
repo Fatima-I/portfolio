@@ -34,7 +34,7 @@ export default function Contact() {
             </span>
           </h2>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: '#5A6370', lineHeight: 1.85, marginBottom: '3rem', maxWidth: 500, margin: '0 auto 3rem' }}>
-            I'm actively looking for internship and graduate opportunities in AI/ML. Whether you have a role, a project, or just want to talk about intelligent systems — my inbox is open.
+            I am open to internship and full-time roles across AI/ML, full stack web and mobile development, and automation. Whether you have a role, a project or just want to talk about intelligent systems - my inbox is open.
           </p>
         </FadeIn>
 

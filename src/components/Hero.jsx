@@ -70,7 +70,7 @@ export default function Hero() {
             color: '#A89AF6',
           }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#00FFB2', display: 'inline-block', animation: 'pulse 2s infinite' }} />
-            open to opportunities · Lahore, PK
+            open to opportunities
           </span>
         </motion.div>
 
@@ -149,16 +149,16 @@ export default function Hero() {
 
         {/* Social icons */}
         <motion.div custom={5} variants={fadeUp} initial="hidden" animate="visible" style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#3D444D' }}>find me on</span>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#6B7785' }}>find me on</span>
           {[
             { href: personal.github, icon: <GithubIcon />, label: 'GitHub', color: '#00FFB2' },
             { href: personal.linkedin, icon: <LinkedinIcon />, label: 'LinkedIn', color: '#7B6EF6' },
             { href: `mailto:${personal.email}`, icon: <Mail size={20} />, label: 'Email', color: '#F471B5' },
           ].map(({ href, icon, label, color }) => (
             <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}
-              style={{ color: '#3D444D', transition: 'color 0.2s, transform 0.2s', display: 'flex' }}
+              style={{ color: '#6B7785', transition: 'color 0.2s, transform 0.2s', display: 'flex' }}
               onMouseEnter={e => { e.currentTarget.style.color = color; e.currentTarget.style.transform = 'translateY(-3px)' }}
-              onMouseLeave={e => { e.currentTarget.style.color = '#3D444D'; e.currentTarget.style.transform = 'translateY(0)' }}>
+              onMouseLeave={e => { e.currentTarget.style.color = '#6B7785'; e.currentTarget.style.transform = 'translateY(0)' }}>
               {icon}
             </a>
           ))}

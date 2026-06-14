@@ -4,11 +4,11 @@ import { personal, education } from '../data/index.js'
 import { MapPin, GraduationCap } from 'lucide-react'
 
 export default function About() {
-  const stats = [
-    { num: '8+', label: 'Projects built', color: '#00FFB2' },
-    { num: '85%', label: 'Best model acc.', color: '#7B6EF6' },
-    { num: '3', label: 'Live deployments', color: '#F471B5' },
-  ]
+  // const stats = [
+  //   { num: '8+', label: 'Projects built', color: '#00FFB2' },
+  //   { num: '85%', label: 'Best model acc.', color: '#7B6EF6' },
+  //   { num: '3', label: 'Live deployments', color: '#F471B5' },
+  // ]
 
   return (
     <section id="about" style={{ padding: '7rem 0', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
@@ -40,7 +40,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* Stats */}
+            {/* Stats
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
               {stats.map(({ num, label, color }) => (
                 <div key={label} style={{
@@ -54,7 +54,7 @@ export default function About() {
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 10, color: '#5A6370', lineHeight: 1.3 }}>{label}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* Education */}
             {education.map((edu, i) => (
@@ -85,7 +85,7 @@ export default function About() {
               {personal.bio}
             </p>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: '#5A6370', lineHeight: 1.9, marginBottom: '2rem' }}>
-              I'm in my final year, actively looking for internships and graduate roles in AI/ML engineering. When I'm not training models, I'm building the tools to deploy them.
+              I am open to internship and full-time roles across AI/ML, full stack web and mobile development, and automation.
             </p>
 
             {/* Interest tags */}

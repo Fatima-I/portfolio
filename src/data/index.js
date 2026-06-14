@@ -13,9 +13,9 @@ export const personal = {
   ],
   bio: "I'm a final-year Computer Science student majoring in AI. I build machine learning systems, NLP pipelines and full-stack web and mobile applications. I care about building things that actually work and aim to learn more technologies that helps in automating tasks and solving real-world problems.",
   location: "Lahore, Pakistan",
-  email: "fatima@example.com",
+  email: "fatimaikram287@gmail.com",
   github: "https://github.com/Fatima-I",
-  linkedin: "https://linkedin.com/in/fatimaikram",
+  //linkedin: "",
   resume: "/resume.pdf",
 }
 
@@ -26,7 +26,7 @@ export const projects = [
     emoji: "🧠",
     description: "A Flutter mobile app that helps children with dyslexia learn and improve through AI-powered assessments. Handwriting samples are analyzed by a FastAPI backend using an SVM-RBF model with explainable feature scores (letter consistency, margin alignment, spacing). RAN assessment uses Groq Whisper large-v3 for real-time speech scoring. OpenAI powers an in-app AI helper bot. Separate dashboards for children, parents, and teachers — with progress tracking, activity assignments, and PDF reports. Backed by Supabase with role-based auth.",
     tags: ["Flutter", "Dart", "FastAPI", "Python", "Supabase", "Groq Whisper", "OpenAI", "scikit-learn"],
-    github: "",
+    github: "https://github.com/hadia718/Dyssist_App",
     live: "",
     featured: true,
   },
@@ -46,7 +46,7 @@ export const projects = [
     emoji: "🎬",
     description: "Full-stack web app that generates subtitles for uploaded videos using OpenAI Whisper. Supports transcription in multiple languages and translation into English, French, Urdu, Arabic, and more. Outputs .srt, .vtt, and .txt formats and can burn subtitles directly into the video. Built with a React frontend and a multi-module Flask backend with parallel audio processing.",
     tags: ["React", "Flask", "Whisper", "NLP", "FFmpeg", "Python"],
-    github: "",
+    github: "https://github.com/Fatima-I/subtitle-generator",
     live: "https://subtitle-generator-webapp.vercel.app/",
     featured: true,
   },
@@ -76,7 +76,7 @@ export const projects = [
     emoji: "🎭",
     description: "IMDB movie review sentiment classifier. Takes a review as input and predicts positive or negative sentiment using an NLP model deployed on PythonAnywhere.",
     tags: ["Python", "NLP", "Flask", "PythonAnywhere"],
-    github: "",
+    github: "https://github.com/Fatima-I/sentiment-analysis",
     live: "https://fatimaikram.pythonanywhere.com/",
     featured: false,
   },
@@ -106,22 +106,22 @@ export const skills = [
   {
     category: "AI & Machine Learning",
     icon: "brain",
-    items: ["scikit-learn", "NLP", "SVM", "CNN", "Transfer Learning", "OpenAI Whisper", "pandas", "numpy"],
+    items: ["scikit-learn", "OpenCV", "NLP", "SVM", "CNN", "Transfer Learning", "Whisper", "pandas", "numpy"],
   },
   {
     category: "Languages",
     icon: "code",
-    items: ["Python", "JavaScript", "TypeScript", "SQL", "C++"],
+    items: ["Python", "JavaScript", "TypeScript", "Dart", "SQL", "C++"],
   },
   {
-    category: "Web & Backend",
+    category: "Web & Mobile",
     icon: "globe",
-    items: ["Flask", "React", "Next.js", "React Native", "REST APIs", "Supabase"],
+    items: ["Flutter", "React", "Next.js", "Flask", "FastAPI", "Supabase", "REST APIs"],
   },
   {
     category: "Tools & Platforms",
     icon: "wrench",
-    items: ["Git", "GitHub", "Railway", "Vercel", "Streamlit", "PyQt5", "Clerk", "Paddle"],
+    items: ["Git", "GitHub", "Vercel", "Railway", "Streamlit", "PyQt5", "Figma"],
   },
 ]
 
