@@ -28,16 +28,16 @@ export default function Hero() {
     fpsLimit: 60,
     interactivity: {
       events: { onHover: { enable: true, mode: 'repulse' }, resize: true },
-      modes: { repulse: { distance: 100, duration: 0.4 } },
+      modes: { repulse: { distance: 120, duration: 0.4 } },
     },
     particles: {
-      color: { value: '#00FFB2' },
-      links: { color: '#00FFB2', distance: 130, enable: true, opacity: 0.08, width: 1 },
-      move: { direction: 'none', enable: true, outModes: { default: 'bounce' }, speed: 0.6 },
-      number: { density: { enable: true, area: 900 }, value: 60 },
-      opacity: { value: 0.15 },
+      color: { value: ['#00FFB2', '#7B6EF6', '#F471B5'] },
+      links: { color: '#7B6EF6', distance: 130, enable: true, opacity: 0.06, width: 1 },
+      move: { direction: 'none', enable: true, outModes: { default: 'bounce' }, speed: 0.5 },
+      number: { density: { enable: true, area: 900 }, value: 70 },
+      opacity: { value: { min: 0.05, max: 0.2 } },
       shape: { type: 'circle' },
-      size: { value: { min: 1, max: 2.5 } },
+      size: { value: { min: 1, max: 3 } },
     },
     detectRetina: true,
   }
@@ -49,56 +49,130 @@ export default function Hero() {
 
   return (
     <section id="home" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+
       <Particles id="tsparticles" init={particlesInit} options={particlesOptions} style={{ position: 'absolute', inset: 0, zIndex: 0 }} />
-      <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%, -50%)', width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,255,178,0.04) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+
+      {/* Multi-color ambient blobs */}
+      <div style={{ position: 'absolute', top: '10%', left: '5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,255,178,0.05) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+      <div style={{ position: 'absolute', top: '30%', right: '10%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(123,110,246,0.06) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+      <div style={{ position: 'absolute', bottom: '10%', left: '30%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(244,113,181,0.04) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+
       <div style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', padding: '0 2rem', width: '100%' }}>
-        <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: '1.5rem' }}>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: '#00FFB2', background: 'rgba(0,255,178,0.06)', border: '1px solid rgba(0,255,178,0.2)', padding: '4px 12px', borderRadius: 20, display: 'flex', alignItems: 'center', gap: 6 }}>
+
+        {/* Badge */}
+        <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible" style={{ marginBottom: '2rem' }}>
+          <span style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            fontFamily: "'JetBrains Mono', monospace", fontSize: 12,
+            padding: '6px 14px', borderRadius: 20,
+            background: 'rgba(123,110,246,0.08)',
+            border: '1px solid rgba(123,110,246,0.25)',
+            color: '#A89AF6',
+          }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#00FFB2', display: 'inline-block', animation: 'pulse 2s infinite' }} />
-            open to opportunities
+            open to opportunities · Lahore, PK
           </span>
         </motion.div>
-        <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="visible" style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 'clamp(2.8rem, 6vw, 5rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: '1.2rem', color: '#E6EDF3' }}>
-          Hi, I'm <span style={{ color: '#00FFB2', textShadow: '0 0 30px rgba(0,255,178,0.35)' }}>{personal.name}</span>
-        </motion.h1>
-        <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 'clamp(1rem, 2.5vw, 1.4rem)', color: '#7D8590', marginBottom: '1.8rem', minHeight: 40 }}>
-          <span style={{ color: '#00FFB2', marginRight: 8 }}>&gt;</span>
-          <TypeAnimation sequence={personal.taglines.flatMap(t => [t, 2200])} wrapper="span" speed={55} repeat={Infinity} style={{ color: '#E6EDF3' }} />
+
+        {/* Main heading */}
+        <motion.div custom={1} variants={fadeUp} initial="hidden" animate="visible">
+          <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, lineHeight: 1.05, marginBottom: '1.2rem' }}>
+            <span style={{ display: 'block', fontSize: 'clamp(1rem, 2vw, 1.2rem)', fontWeight: 400, color: '#7D8590', marginBottom: '0.5rem', fontFamily: "'JetBrains Mono', monospace" }}>
+              &gt; Hello, world. I'm
+            </span>
+            <span style={{
+              display: 'block',
+              fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+              background: 'linear-gradient(135deg, #E6EDF3 0%, #E6EDF3 40%, #00FFB2 70%, #7B6EF6 100%)',
+              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+            }}>
+              {personal.name}
+            </span>
+          </h1>
         </motion.div>
-        <motion.p custom={3} variants={fadeUp} initial="hidden" animate="visible" style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.05rem', color: '#7D8590', maxWidth: 520, lineHeight: 1.75, marginBottom: '2.5rem' }}>
+
+        {/* Typewriter */}
+        <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible"
+          style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)', marginBottom: '1.8rem', minHeight: 44, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <span style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            background: 'linear-gradient(135deg, #00FFB2, #7B6EF6)',
+            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+            fontWeight: 500,
+          }}>_</span>
+          <TypeAnimation
+            sequence={personal.taglines.flatMap(t => [t, 2400])}
+            wrapper="span"
+            speed={60}
+            repeat={Infinity}
+            style={{ fontFamily: "'Space Grotesk', monospace", color: '#C0CAD4', fontWeight: 500 }}
+          />
+        </motion.div>
+
+        {/* Bio */}
+        <motion.p custom={3} variants={fadeUp} initial="hidden" animate="visible"
+          style={{ fontSize: '1.05rem', color: '#6B7785', maxWidth: 500, lineHeight: 1.8, marginBottom: '2.5rem', fontFamily: "'Inter', sans-serif" }}>
           {personal.bio}
         </motion.p>
-        <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', marginBottom: '3rem' }}>
-          <a href="#projects" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 15, background: '#00FFB2', color: '#080C10', padding: '12px 28px', borderRadius: 8, textDecoration: 'none', transition: 'box-shadow 0.2s, transform 0.2s' }}
-            onMouseEnter={e => { e.target.style.boxShadow = '0 0 24px rgba(0,255,178,0.4)'; e.target.style.transform = 'translateY(-2px)' }}
-            onMouseLeave={e => { e.target.style.boxShadow = 'none'; e.target.style.transform = 'translateY(0)' }}>
-            View my work
+
+        {/* CTAs */}
+        <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible"
+          style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+          <a href="#projects"
+            style={{
+              position: 'relative', overflow: 'hidden',
+              fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 15,
+              color: '#060608', textDecoration: 'none',
+              padding: '13px 30px', borderRadius: 10,
+              background: 'linear-gradient(135deg, #00FFB2, #00C8FF)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,255,178,0.3)' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none' }}>
+            View my work →
           </a>
-          <a href={personal.github} target="_blank" rel="noreferrer" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 15, color: '#E6EDF3', border: '1px solid #21262D', padding: '12px 28px', borderRadius: 8, textDecoration: 'none', transition: 'border-color 0.2s, transform 0.2s' }}
-            onMouseEnter={e => { e.target.style.borderColor = 'rgba(0,255,178,0.4)'; e.target.style.transform = 'translateY(-2px)' }}
-            onMouseLeave={e => { e.target.style.borderColor = '#21262D'; e.target.style.transform = 'translateY(0)' }}>
-            GitHub profile
+          <a href={`mailto:${personal.email}`}
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 15,
+              color: '#C0CAD4', textDecoration: 'none',
+              padding: '13px 30px', borderRadius: 10,
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              backdropFilter: 'blur(10px)',
+              transition: 'transform 0.2s, border-color 0.2s, background 0.2s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.borderColor = 'rgba(123,110,246,0.4)'; e.currentTarget.style.background = 'rgba(123,110,246,0.08)' }}
+            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}>
+            Get in touch
           </a>
         </motion.div>
-        <motion.div custom={5} variants={fadeUp} initial="hidden" animate="visible" style={{ display: 'flex', gap: '1rem' }}>
+
+        {/* Social icons */}
+        <motion.div custom={5} variants={fadeUp} initial="hidden" animate="visible" style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#3D444D' }}>find me on</span>
           {[
-            { href: personal.github, icon: <GithubIcon />, label: 'GitHub' },
-            { href: personal.linkedin, icon: <LinkedinIcon />, label: 'LinkedIn' },
-            { href: `mailto:${personal.email}`, icon: <Mail size={20} />, label: 'Email' },
-          ].map(({ href, icon, label }) => (
+            { href: personal.github, icon: <GithubIcon />, label: 'GitHub', color: '#00FFB2' },
+            { href: personal.linkedin, icon: <LinkedinIcon />, label: 'LinkedIn', color: '#7B6EF6' },
+            { href: `mailto:${personal.email}`, icon: <Mail size={20} />, label: 'Email', color: '#F471B5' },
+          ].map(({ href, icon, label, color }) => (
             <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}
               style={{ color: '#3D444D', transition: 'color 0.2s, transform 0.2s', display: 'flex' }}
-              onMouseEnter={e => { e.currentTarget.style.color = '#00FFB2'; e.currentTarget.style.transform = 'translateY(-3px)' }}
+              onMouseEnter={e => { e.currentTarget.style.color = color; e.currentTarget.style.transform = 'translateY(-3px)' }}
               onMouseLeave={e => { e.currentTarget.style.color = '#3D444D'; e.currentTarget.style.transform = 'translateY(0)' }}>
               {icon}
             </a>
           ))}
         </motion.div>
       </div>
-      <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }} style={{ position: 'absolute', bottom: 40, left: '50%', transform: 'translateX(-50%)', color: '#3D444D', zIndex: 1 }}>
-        <ArrowDown size={20} />
+
+      {/* Scroll indicator */}
+      <motion.div
+        animate={{ y: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+        style={{ position: 'absolute', bottom: 40, left: '50%', transform: 'translateX(-50%)', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: '#2D333B', letterSpacing: '0.1em' }}>SCROLL</span>
+        <ArrowDown size={16} style={{ color: '#2D333B' }} />
       </motion.div>
-      <style>{`@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }`}</style>
     </section>
   )
 }

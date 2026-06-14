@@ -22,56 +22,49 @@ export default function Navbar() {
       transition={{ duration: 0.3, ease: 'easeInOut' }}
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
-        backdropFilter: atTop ? 'none' : 'blur(16px)',
-        backgroundColor: atTop ? 'transparent' : 'rgba(8, 12, 16, 0.85)',
-        borderBottom: atTop ? 'none' : '1px solid #21262D',
-        transition: 'background-color 0.3s, border-color 0.3s',
-      }}
-    >
+        backdropFilter: atTop ? 'none' : 'blur(20px)',
+        backgroundColor: atTop ? 'transparent' : 'rgba(6,6,8,0.8)',
+        borderBottom: atTop ? 'none' : '1px solid rgba(255,255,255,0.06)',
+        transition: 'background-color 0.3s',
+      }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 2rem', height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {/* Logo */}
         <a href="#home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{
             width: 34, height: 34, borderRadius: 8,
-            background: 'rgba(0,255,178,0.1)',
-            border: '1px solid rgba(0,255,178,0.3)',
+            background: 'linear-gradient(135deg, rgba(0,255,178,0.15), rgba(123,110,246,0.15))',
+            border: '1px solid rgba(255,255,255,0.08)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: "'JetBrains Mono', monospace", fontSize: 13, fontWeight: 500, color: '#00FFB2',
+            fontFamily: "'JetBrains Mono', monospace", fontSize: 13, fontWeight: 600,
+            background: 'linear-gradient(135deg, #00FFB2, #7B6EF6)',
+            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
           }}>FI</div>
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 15, color: '#E6EDF3' }}>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 15, color: '#E6EDF3' }}>
             {personal.name}
           </span>
         </a>
-
-        {/* Links */}
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          {links.map(link => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              style={{
-                fontFamily: "'Inter', sans-serif", fontSize: 14,
-                color: '#7D8590', textDecoration: 'none',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={e => e.target.style.color = '#00FFB2'}
-              onMouseLeave={e => e.target.style.color = '#7D8590'}
-            >{link}</a>
+          {links.map((link, i) => (
+            <a key={link} href={`#${link.toLowerCase()}`}
+              style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: '#5A6370', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={e => e.target.style.color = '#E6EDF3'}
+              onMouseLeave={e => e.target.style.color = '#5A6370'}>
+              {link}
+            </a>
           ))}
-          <a
-            href={personal.resume}
-            target="_blank"
-            rel="noreferrer"
+          <a href={personal.resume} target="_blank" rel="noreferrer"
             style={{
               fontFamily: "'JetBrains Mono', monospace", fontSize: 12,
-              color: '#00FFB2', textDecoration: 'none',
-              border: '1px solid rgba(0,255,178,0.4)',
+              background: 'linear-gradient(135deg, #00FFB2, #7B6EF6)',
+              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+              textDecoration: 'none',
+              border: '1px solid rgba(123,110,246,0.3)',
               padding: '6px 14px', borderRadius: 6,
-              transition: 'background 0.2s, box-shadow 0.2s',
+              transition: 'border-color 0.2s, background 0.2s',
             }}
-            onMouseEnter={e => { e.target.style.background = 'rgba(0,255,178,0.08)'; e.target.style.boxShadow = '0 0 16px rgba(0,255,178,0.15)' }}
-            onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.boxShadow = 'none' }}
-          >resume.pdf</a>
+            onMouseEnter={e => { e.target.style.borderColor = 'rgba(0,255,178,0.5)'; e.target.style.background = 'rgba(0,255,178,0.05)' }}
+            onMouseLeave={e => { e.target.style.borderColor = 'rgba(123,110,246,0.3)'; e.target.style.background = 'transparent' }}>
+            resume.pdf
+          </a>
         </div>
       </div>
     </motion.nav>

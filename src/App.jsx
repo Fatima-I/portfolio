@@ -1,3 +1,4 @@
+import AnimatedBG from './components/AnimatedBG.jsx'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -8,16 +9,19 @@ import Footer from './components/Footer.jsx'
 
 export default function App() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <div style={{ position: 'relative' }}>
+      <AnimatedBG />
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </div>
   )
 }
