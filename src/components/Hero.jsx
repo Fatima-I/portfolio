@@ -12,11 +12,11 @@ const GithubIcon = () => (
   </svg>
 )
 
-// const LinkedinIcon = () => (
-//   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-//     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-//   </svg>
-// )
+const LinkedinIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+)
 
 export default function Hero() {
   const particlesInit = useCallback(async (engine) => {
@@ -70,7 +70,7 @@ export default function Hero() {
             color: '#A89AF6',
           }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#00FFB2', display: 'inline-block', animation: 'pulse 2s infinite' }} />
-            open to opportunities
+            open to opportunities · Lahore, PK
           </span>
         </motion.div>
 
@@ -117,6 +117,7 @@ export default function Hero() {
 
         {/* CTAs */}
         <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible"
+          className="hero-ctas"
           style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
           <a href="#projects"
             style={{
@@ -131,7 +132,7 @@ export default function Hero() {
             onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none' }}>
             View my work →
           </a>
-          <a href={`https://mail.google.com/mail/?view=cm&to=${personal.email}`}
+          <a href={`mailto:${personal.email}`}
             style={{
               fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500, fontSize: 15,
               color: '#C0CAD4', textDecoration: 'none',
@@ -149,16 +150,16 @@ export default function Hero() {
 
         {/* Social icons */}
         <motion.div custom={5} variants={fadeUp} initial="hidden" animate="visible" style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#6B7785' }}>find me on</span>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#3D444D' }}>find me on</span>
           {[
             { href: personal.github, icon: <GithubIcon />, label: 'GitHub', color: '#00FFB2' },
-            //{ href: personal.linkedin, icon: <LinkedinIcon />, label: 'LinkedIn', color: '#7B6EF6' },
-            { href: `https://mail.google.com/mail/?view=cm&to=${personal.email}`, icon: <Mail size={20} />, label: 'Email', color: '#F471B5' },
+            { href: personal.linkedin, icon: <LinkedinIcon />, label: 'LinkedIn', color: '#7B6EF6' },
+            { href: `mailto:${personal.email}`, icon: <Mail size={20} />, label: 'Email', color: '#F471B5' },
           ].map(({ href, icon, label, color }) => (
             <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}
-              style={{ color: '#6B7785', transition: 'color 0.2s, transform 0.2s', display: 'flex' }}
+              style={{ color: '#3D444D', transition: 'color 0.2s, transform 0.2s', display: 'flex' }}
               onMouseEnter={e => { e.currentTarget.style.color = color; e.currentTarget.style.transform = 'translateY(-3px)' }}
-              onMouseLeave={e => { e.currentTarget.style.color = '#6B7785'; e.currentTarget.style.transform = 'translateY(0)' }}>
+              onMouseLeave={e => { e.currentTarget.style.color = '#3D444D'; e.currentTarget.style.transform = 'translateY(0)' }}>
               {icon}
             </a>
           ))}

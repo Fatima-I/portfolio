@@ -37,11 +37,20 @@ body {
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
-/* Fix dim text globally */
-p, span, a, li, h1, h2, h3, h4 {
-  -webkit-font-smoothing: antialiased;
-}
+/* ── Mobile responsive ── */
+@media (max-width: 640px) {
+  #home { padding-top: 80px; }
+  #home > div { padding: 0 1.25rem !important; }
 
-body {
-  color: #C0CAD4;
+  /* Stack CTA buttons */
+  .hero-ctas { flex-direction: column !important; }
+  .hero-ctas a { width: 100% !important; text-align: center !important; justify-content: center !important; }
+
+  /* Section padding */
+  section { padding: 4rem 0 !important; }
+
+  /* Single column grids */
+  #projects > div > div[style*="grid"] { grid-template-columns: 1fr !important; }
+  #skills > div > div[style*="grid"] { grid-template-columns: 1fr !important; }
+  #about > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
 }
