@@ -21,16 +21,6 @@ export const personal = {
 
 export const projects = [
   {
-    id: 6,
-    title: "Dyssist (Mobile Application)",
-    emoji: "🧠",
-    description: "A Flutter mobile app that helps children with dyslexia learn and improve through AI-powered assessments. Handwriting samples are analyzed by a FastAPI backend using an SVM-RBF model with explainable feature scores (letter consistency, margin alignment, spacing). RAN assessment uses Groq Whisper large-v3 for real-time speech scoring. OpenAI powers an in-app AI helper bot. Separate dashboards for children, parents, and teachers — with progress tracking, activity assignments, and PDF reports. Backed by Supabase with role-based auth.",
-    tags: ["Flutter", "Dart", "FastAPI", "Python", "Supabase", "Groq Whisper", "OpenAI", "scikit-learn"],
-    github: "https://github.com/hadia718/Dyssist_App",
-    live: "",
-    featured: true,
-  },
-  {
     id: 1,
     title: "SmartSkillify (Web App)",
     emoji: "📚",
@@ -79,6 +69,16 @@ export const projects = [
     github: "https://github.com/Fatima-I/sentiment-analysis",
     live: "https://fatimaikram.pythonanywhere.com/",
     featured: false,
+  },
+  {
+    id: 6,
+    title: "Dyssist (Mobile Application)",
+    emoji: "🧠",
+    description: "A Flutter mobile app that helps children with dyslexia learn and improve through AI-powered assessments. Handwriting samples are analyzed by a FastAPI backend using an SVM-RBF model with explainable feature scores (letter consistency, margin alignment, spacing). RAN assessment uses Groq Whisper large-v3 for real-time speech scoring. OpenAI powers an in-app AI helper bot. Separate dashboards for children, parents, and teachers — with progress tracking, activity assignments, and PDF reports. Backed by Supabase with role-based auth.",
+    tags: ["Flutter", "Dart", "FastAPI", "Python", "Supabase", "Groq Whisper", "OpenAI", "scikit-learn"],
+    github: "https://github.com/hadia718/Dyssist_App",
+    live: "",
+    featured: true,
   },
   {
     id: 7,
