@@ -3,6 +3,8 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { personal } from '../data/index.js'
 import { Menu, X } from 'lucide-react'
 
+import { track } from '@vercel/analytics'
+
 const links = ['About', 'Projects', 'Skills', 'Contact']
 
 export default function Navbar() {
@@ -60,6 +62,7 @@ export default function Navbar() {
               </a>
             ))}
             <a href={personal.resume} target="_blank" rel="noreferrer"
+              onClick={() => track('Downloaded Resume')}
               style={{
                 fontFamily: "'JetBrains Mono', monospace", fontSize: 12, fontWeight: 600,
                 background: 'linear-gradient(135deg, #00FFB2, #7B6EF6)',
@@ -97,7 +100,7 @@ export default function Navbar() {
                 {link}
               </a>
             ))}
-            <a href={personal.resume} target="_blank" rel="noreferrer" onClick={closeMenu}
+           <a href={personal.resume} target="_blank" rel="noreferrer" onClick={() => { track('Downloaded Resume'); closeMenu() }}
               style={{
                 fontFamily: "'JetBrains Mono', monospace", fontSize: 13, fontWeight: 600,
                 color: '#00FFB2', textDecoration: 'none',

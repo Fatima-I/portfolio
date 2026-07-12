@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
+import { track } from '@vercel/analytics'
 import FadeIn from './FadeIn.jsx'
 import { projects } from '../data/index.js'
 
@@ -61,6 +62,7 @@ function ProjectCard({ project, index }) {
         <div style={{ display: 'flex', gap: 8 }}>
           {project.github && (
             <a href={project.github} target="_blank" rel="noreferrer"
+              onClick={() => track('Viewed GitHub Repo', { project: project.title })}
               style={{ color: '#6B7785', transition: 'color 0.2s, transform 0.2s', display: 'flex', padding: 6, borderRadius: 6, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
               onMouseEnter={e => { e.currentTarget.style.color = accent; e.currentTarget.style.borderColor = `${accent}40` }}
               onMouseLeave={e => { e.currentTarget.style.color = '#6B7785'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)' }}>
@@ -69,6 +71,7 @@ function ProjectCard({ project, index }) {
           )}
           {project.live && (
             <a href={project.live} target="_blank" rel="noreferrer"
+              onClick={() => track('Viewed Live Site', { project: project.title })}
               style={{ color: '#6B7785', transition: 'color 0.2s', display: 'flex', padding: 6, borderRadius: 6, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
               onMouseEnter={e => { e.currentTarget.style.color = accent; e.currentTarget.style.borderColor = `${accent}40` }}
               onMouseLeave={e => { e.currentTarget.style.color = '#6B7785'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)' }}>
